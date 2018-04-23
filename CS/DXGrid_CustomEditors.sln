@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXGrid_CustomEditors", "DXGrid_CustomEditors.csproj", "{0CF5566D-5EAD-4186-B2B2-ED86AAF99CCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CF5566D-5EAD-4186-B2B2-ED86AAF99CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF5566D-5EAD-4186-B2B2-ED86AAF99CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF5566D-5EAD-4186-B2B2-ED86AAF99CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF5566D-5EAD-4186-B2B2-ED86AAF99CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
