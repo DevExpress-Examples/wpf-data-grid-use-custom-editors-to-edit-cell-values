@@ -19,19 +19,19 @@
                     </dxg:GridColumn.EditSettings>
                 </dxg:GridColumn>
                 <dxg:GridColumn FieldName="UnitsOnOrder">
-                    <dxg:GridColumn.DisplayTemplate>
-                        <ControlTemplate>
-                            <ProgressBar Value="{Binding Path=DisplayText, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Minimum="0" Maximum="50" />
-                        </ControlTemplate>
-                    </dxg:GridColumn.DisplayTemplate>
-                    <dxg:GridColumn.EditTemplate>
-                        <ControlTemplate>
+                    <dxg:GridColumn.CellDisplayTemplate>
+                        <DataTemplate>
+                            <ProgressBar Value="{Binding Path=Value, Converter={local:IntToDoubleConverter}}" Minimum="0" Maximum="50" />
+                        </DataTemplate>
+                    </dxg:GridColumn.CellDisplayTemplate>
+                    <dxg:GridColumn.CellEditTemplate>
+                        <DataTemplate>
                             <Grid VerticalAlignment="Center">
-                                <Slider Name="PART_Editor" Minimum="0" Maximum="50" Value="{Binding Path=EditValue, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, Converter={local:IntToDoubleConverter}}" />
-                                <TextBlock Text="{Binding EditValue, RelativeSource={RelativeSource TemplatedParent}}" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="NoWrap" />
+                                <Slider Minimum="0" Maximum="50" Value="{Binding Path=Value, Mode=TwoWay, Converter={local:IntToDoubleConverter}}" />
+                                <TextBlock Text="{Binding Path=Value}" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="NoWrap" />
                             </Grid>
-                        </ControlTemplate>  
-                    </dxg:GridColumn.EditTemplate>
+                        </DataTemplate>
+                    </dxg:GridColumn.CellEditTemplate>
                 </dxg:GridColumn>
                 <dxg:GridColumn FieldName="Total" UnboundType="Decimal" ReadOnly="True">
                     <dxg:GridColumn.EditSettings>
