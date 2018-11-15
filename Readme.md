@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [ViewModel.cs](./CS/ViewModel.cs) (VB: [ViewModel.vb](./VB/ViewModel.vb))
+* [Window1.xaml](./CS/Window1.xaml) (VB: [Window1.xaml](./VB/Window1.xaml))
+* [Window1.xaml.cs](./CS/Window1.xaml.cs) (VB: [Window1.xaml](./VB/Window1.xaml))
+<!-- default file list end -->
 # How to Use Custom Editors to Edit Cell Values
 
 
