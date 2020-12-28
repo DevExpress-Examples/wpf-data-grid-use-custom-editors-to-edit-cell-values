@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
+﻿using DevExpress.Mvvm;
+using System.Collections.ObjectModel;
 
-namespace DXGrid_CustomEditors {
-    public class DemoViewModel : INotifyPropertyChanged {
-        List<Product> products;
+namespace DXGrid_CustomEditors
+{
+    public class DemoViewModel : ViewModelBase {
+        ObservableCollection<Product> _products;
         public DemoViewModel() {
             Products = GenerateData();
         }
-        List<Product> GenerateData() {
-            List<Product> data = new List<Product>();
+        ObservableCollection<Product> GenerateData() {
+            ObservableCollection<Product> data = new ObservableCollection<Product>();
             data.Add(new Product() { ProductName = "Chai", UnitPrice = 18, UnitsOnOrder = 10 });
             data.Add(new Product() { ProductName = "Ipoh Coffee", UnitPrice = 36.8, UnitsOnOrder = 12 });
             data.Add(new Product() { ProductName = "Outback Lager", UnitPrice = 12, UnitsOnOrder = 25 });
@@ -19,29 +17,29 @@ namespace DXGrid_CustomEditors {
             data.Add(new Product() { ProductName = "Konbu", UnitPrice = 6, UnitsOnOrder = 24 });
             return data;
         }
-        public List<Product> Products { 
-            get { return products; }
+        public ObservableCollection<Product> Products { 
+            get { return _products; }
             set {
-                if(value == products)
+                if(value == _products)
                     return;
-                products = value;
-                NotifyPropertyChanged("Products");
+                _products = value;
+                this.RaisePropertyChanged("Products");
             }
         }
-
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(String info) {
-            if(PropertyChanged != null) {
-                PropertyChanged(this, new PropertyChangedEventArgs(info));
-            }
-        }
-        #endregion
     }
 
-    public class Product {
-        public string ProductName { get; set; }
-        public double UnitPrice { get; set; }
-        public int UnitsOnOrder { get; set; }
+    public class Product : BindableBase {
+        public string ProductName {
+            get { return GetProperty<string>(() => ProductName); }
+            set { SetProperty(() => ProductName, value); }
+        }
+        public double UnitPrice {
+            get { return GetProperty<double>(() => UnitPrice); }
+            set { SetProperty(() => UnitPrice, value); }
+        }
+        public int UnitsOnOrder {
+            get { return GetProperty<int>(() => UnitsOnOrder); }
+            set { SetProperty(() => UnitsOnOrder, value); }
+        }
     }
 }

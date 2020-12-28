@@ -18,12 +18,6 @@ namespace DXGrid_CustomEditors {
         public Window1() {
             InitializeComponent();            
         }
-        private void grid_CustomUnboundColumnData(object sender, DevExpress.Xpf.Grid.GridColumnDataEventArgs e) {
-            if (e.Column.FieldName == "Total") {
-                e.Value = Convert.ToInt32(grid.GetCellValueByListIndex(e.ListSourceRowIndex, "UnitPrice")) *
-                    Convert.ToDouble(grid.GetCellValueByListIndex(e.ListSourceRowIndex, "UnitsOnOrder"));
-            }
-        }
     }
 
     public class IntToDoubleConverter : MarkupExtension, IValueConverter {
@@ -31,7 +25,9 @@ namespace DXGrid_CustomEditors {
             return this;
         }
         object IValueConverter.Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
-            return Convert.ToDouble(value);
+            if(value is int)
+                return Convert.ToDouble(value);
+            return double.NaN;
         }
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) {
             return Convert.ToInt32(value);
