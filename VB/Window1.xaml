@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:DXGrid_CustomEditors"
         Title="Window1"
         Height="300" Width="500">
-    <Window.Resources>
-        <local:DemoViewModel x:Key="viewModel"/>
-    </Window.Resources>
-    <Grid DataContext="{StaticResource viewModel}">
+    <Window.DataContext>
+        <local:DemoViewModel/>
+    </Window.DataContext>
+    <Grid>
         <dxg:GridControl x:Name="grid" ItemsSource="{Binding Products}">
             <dxg:GridControl.Columns>
                 <dxg:GridColumn FieldName="ProductName"/>
