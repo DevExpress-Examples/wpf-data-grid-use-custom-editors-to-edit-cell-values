@@ -10,7 +10,7 @@ Namespace DXGrid_CustomEditors
         Inherits Window
 
         Public Sub New()
-            InitializeComponent()
+            Me.InitializeComponent()
         End Sub
     End Class
 
