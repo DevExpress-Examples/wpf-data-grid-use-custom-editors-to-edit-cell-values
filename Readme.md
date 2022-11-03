@@ -5,14 +5,14 @@
 <!-- default badges end -->
 # WPF Data Grid - Use Custom Editors to Edit Cell Values
 
-This example shows how to use custom editors ([ProgressBar](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.progressbar) and [Slider](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.slider)) to display and edit the **Units On Order** column's values.
+This example illustrates how to use custom WPF data editors ([ProgressBar](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.progressbar) and [Slider](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.slider)) to display and edit **Units On Order** column values.
 
 ![image](https://user-images.githubusercontent.com/65009440/171182860-0dab0ada-9b5c-4faa-ab66-0f7a28b19e32.png)
 
 Custom editors are defined in templates:
 
-* The [CellDisplayTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellDisplayTemplate) property defines a template that displays column values.
-* The [CellEditTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellEditTemplate) property defines a template used to edit cell values.
+* The [CellDisplayTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellDisplayTemplate) property defines the template used to display column values.
+* The [CellEditTemplate](https://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.ColumnBase.CellEditTemplate) property defines the template used to edit cell values.
 
 ## Files to Look At
 
